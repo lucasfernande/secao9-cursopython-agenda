@@ -14,15 +14,17 @@
           </thead>
           <tbody>
           {% for contato in contatos %}
-            <tr>
-              <td>
-                <!-- enviando o id como argumento -->
-                <a href="{% url 'ver_contato' contato.id %}">{{ contato.nome }}</a>
-              </td>
-              <td>{{ contato.sobrenome }}</td>
-              <td>{{ contato.telefone }}</td>
-              <td>{{ contato.categoria }}</td>
-            </tr>
+            {% if contato.mostrar %} <!-- só exibe o contato caso o campo mostrar esteja marcado no django admin -->
+              <tr>
+                <td>
+                  <!-- enviando o id como argumento -->
+                  <a href="{% url 'ver_contato' contato.id %}">{{ contato.nome }}</a>
+                </td>
+                <td>{{ contato.sobrenome }}</td>
+                <td>{{ contato.telefone }}</td>
+                <td>{{ contato.categoria }}</td>
+              </tr>
+            {% endif %}
           {% endfor %}
           </tbody>
         </table>
