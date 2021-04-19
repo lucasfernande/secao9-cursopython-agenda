@@ -11,7 +11,7 @@ class ContatoAdmin(admin.ModelAdmin):
     list_display_links = ('id', 'nome', 'sobrenome')
     #  torna os atributos clicáveis
 
-    list_filter = ('nome', 'sobrenome')
+    #  list_filter = ('nome', 'sobrenome')
     #  adiciona um campo de filtragem
 
     list_per_page = 10
