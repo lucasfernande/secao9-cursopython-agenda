@@ -6,6 +6,7 @@
         <table class="table">
           <thead>
             <tr>
+              <th>Id</th>
               <th>Nome</th>
               <th>Sobrenome</th>
               <th>Telefone</th>
@@ -13,9 +14,9 @@
             </tr>
           </thead>
           <tbody>
-          {% for contato in contatos %}
-            {% if contato.mostrar %} <!-- só exibe o contato caso o campo mostrar esteja marcado no django admin -->
+            {% for contato in contatos %}
               <tr>
+                <td>{{ contato.id }}</td>
                 <td>
                   <!-- enviando o id como argumento -->
                   <a href="{% url 'ver_contato' contato.id %}">{{ contato.nome }}</a>
@@ -24,8 +25,7 @@
                 <td>{{ contato.telefone }}</td>
                 <td>{{ contato.categoria }}</td>
               </tr>
-            {% endif %}
-          {% endfor %}
+            {% endfor %}
           </tbody>
         </table>
 

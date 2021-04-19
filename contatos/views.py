@@ -7,7 +7,8 @@ from .models import Contato
 # Create your views here.
 
 def index(request):
-    contatos = Contato.objects.all()
+    # ordenando por id de forma decrescente e filtrando pelo campo mostrar
+    contatos = Contato.objects.order_by('-id').filter(mostrar=True)
     paginator = Paginator(contatos, 10)
 
     page = request.GET.get('p')
