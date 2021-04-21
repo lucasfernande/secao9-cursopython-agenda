@@ -1,6 +1,17 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
       <a class="navbar-brand" href="{% url 'index' %}">Agenda</a>
+      {% if not 'accounts' in request.path %}
+        <form class="form-inline" action="{% url 'login' %}">
+            <button class="btn btn-primary my-2 my-sm-0" type="submit">Login</button>
+        </form>
+      {% endif %}
+
+      {% if 'dashboard' in request.path %}
+        <form class="form-inline" action="{% url 'logout' %}">
+            <button class="btn btn-primary my-2 my-sm-0" type="submit">Sair</button>
+        </form>
+      {% endif %}
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
         aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
