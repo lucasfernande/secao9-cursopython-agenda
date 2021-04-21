@@ -30,11 +30,11 @@
                        id="search-input"
                        placeholder="Digite sua pesquisa"
                        name="termo">
+                {% include 'parciais/_messages.html '%}
               </div>
             </div>
           </form>
         {% endif %}
-        {% include 'parciais/_messages.html '%}
 
         {%block conteudo%} {%endblock%}
       </div>
