@@ -5,30 +5,31 @@
     <h1 class="mt-4 mb-3">Cadastro</h1>
 
     <form method="POST" action="{% url 'cadastro' %}">
+        {% include 'parciais/_messages.html' %}
         {% csrf_token %}
         <div class="form-group">
-            <label>E-mail:</label>
-            <input type="email" name="email" class="form-control">
-        </div>
-        <div class="form-group">
             <label>Nome:</label>
-            <input type="email" name="nome" class="form-control">
+            <input type="text" name="nome" value="{{ request.POST.nome }}" class="form-control">
         </div>
         <div class="form-group">
             <label>Sobrenome:</label>
-            <input type="email" name="sobrenome" class="form-control">
+            <input type="text" name="s_nome" value="{{ request.POST.s_nome }}" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Email:</label>
+            <input type="email" name="email" value="{{ request.POST.email }}" class="form-control">
         </div>
         <div class="form-group">
             <label>Usuário:</label>
-            <input type="email" name="sobrenome" class="form-control">
+            <input type="text" name="usuario" value="{{ request.POST.usuario }}" class="form-control">
         </div>
         <div class="form-group">
             <label>Senha:</label>
-            <input type="email" name="senha" class="form-control">
+            <input type="password" name="senha" class="form-control">
         </div>
         <div class="form-group">
             <label>Repita a senha:</label>
-            <input type="email" name="senha2" class="form-control">
+            <input type="password" name="senha2" class="form-control">
         </div>
         <button type="submit" class="btn btn-primary">Cadastrar</button>
     </form>
