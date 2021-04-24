@@ -118,9 +118,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'templates/static')]
 # configurando o django para procurar arquivos estáticos na pasta templates/static
 
-STATIC_ROOT = os.path.join('static')
-# py manage.py collectstatic
-
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = 'media/'
 
